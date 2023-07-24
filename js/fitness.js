@@ -25,7 +25,6 @@ const menuComidas = async () => {
         let comidaData = new Comida(comida.id, comida.nombre, comida.calorias, comida.categoria, comida.proteinas, comida.grasas)
         comidas.push(comidaData)
     }
-    localStorage.setItem("comidas", JSON.stringify(comidas))
 }
 //Funcion en donde imprimimos el array al dom
 function verComidas(array){

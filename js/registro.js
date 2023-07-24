@@ -137,8 +137,11 @@ function mostrarRegistro(array){
             let datoEliminar = array.find((registro) => registro.id == dato.id)
             let posicion = array.indexOf(datoEliminar)
             array.splice(posicion,1)
-            if (dato.imc !== null) {
+            if (dato.imc == null) {
                 localStorage.setItem("registro", JSON.stringify(array));
+                setTimeout(()=> {
+                    mostrarRegistro(registro)
+                })
             }
             //alerta de que se elimino
             Toastify(
