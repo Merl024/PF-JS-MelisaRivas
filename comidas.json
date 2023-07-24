@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "nombre": "Yogurt con fibras y frutas",
+        "calorias": 71,
+        "categoria": "Lácteos",
+        "proteinas": 4.7,
+        "grasas": 0.2
+    },
+    {
+        "id": 2,
+        "nombre": "Queso cottage",
+        "calorias": 95,
+        "categoria": "Lácteos",
+        "proteinas": 11.4,
+        "grasas": 4.5
+    },
+    {
+        "id": 3,
+        "nombre": "Leche descremada en polvo",
+        "calorias": 36,
+        "categoria": "Lácteos",
+        "proteinas": 3.5,
+        "grasas": 0.1        
+    }, 
+    {
+        "id": 4,
+        "nombre": "Clara de huevo",
+        "calorias": 53,
+        "categoria": "Huevos",
+        "proteinas": 11,
+        "grasas": 0.2           
+    },
+    {
+        "id": 5,
+        "nombre": "Huevo de codorniz",
+        "calorias": 179,
+        "categoria": "Huevos",
+        "proteinas": 11.6,
+        "grasas": 13.1        
+    },
+    {
+        "id": 6,
+        "nombre": "Yema de huevo",
+        "calorias": 341,
+        "categoria": "Huevos",
+        "proteinas": 16,
+        "grasas": 29.2        
+    },
+    {
+        "id": 7,
+        "nombre": "Lomo de res",
+        "calorias": 241,
+        "categoria": "Carnes",
+        "proteinas": 18.5,
+        "grasas": 17.9        
+    },
+    {
+        "id": 8,
+        "nombre": "Carne de cerdo gorda",
+        "calorias": 346,
+        "categoria": "Carnes",
+        "proteinas": 14.6,
+        "grasas": 31.4                
+    },
+    {
+        "id": 9,
+        "nombre": "Carne de pollo",
+        "calorias": 170,
+        "categoria": "Carnes",
+        "proteinas": 18.2,
+        "grasas": 10.2                       
+    },
+    {
+        "id": 10,
+        "nombre": "Aguacate",
+        "calorias": 162,
+        "categoria": "Vegetales y frutas",
+        "proteinas": 1.8,
+        "grasas": 0.2                       
+    },
+    {
+        "id": 11,
+        "nombre": "Banana",
+        "calorias": 85,
+        "categoria": "Vegetales y frutas",
+        "proteinas": 1.1,
+        "grasas": 0.2                      
+    },
+    {
+        "id": 12,
+        "nombre": "Coco fresco",
+        "calorias": 296,
+        "categoria": "Vegetales y frutas",
+        "proteinas": 3.5,
+        "grasas": 27.2                       
+    }
+]

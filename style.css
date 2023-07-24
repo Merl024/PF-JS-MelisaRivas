@@ -86,7 +86,7 @@ h2{
 }
 
 .card{
-    border-color:rgba(48, 165, 140, 0.854) ;
+    border:rgba(48, 165, 140, 0.854) ;
     border-width: .24rem;
     background-color:rgba(48, 165, 140, 0.178) ; ;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
