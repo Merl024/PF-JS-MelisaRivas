@@ -109,3 +109,7 @@ h2{
 .btn{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.titleCmd{
+    color: rgb(94, 15, 26);
+    font-weight: bold;
+}

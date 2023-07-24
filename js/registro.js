@@ -1,4 +1,6 @@
 //Declarando variables
+let h6Re = document.querySelector("#h6Re")
+let spinnerRe = document.querySelector("#spinnerRe")
 let verReigstro = document.getElementById("verReigstro")
 let ocultarReigstro = document.getElementById("ocultarReigstro")
 let agregarDatoBtn = document.getElementById(`agregarDatoBtn`)
@@ -14,15 +16,38 @@ localStorage.getItem("registro") ? (registro = JSON.parse(localStorage.getItem('
 // Creando clase constructora para guardar los datos del registro de peso y altura, con sus fechas
 class Registro{
     constructor(id, pesoI, alturaI, fechaI){
-       this.id = id,
-       this.pesoI = pesoI,
-       this.alturaI = alturaI,
-       this.fechaI = fechaI
-       this.imc = (this.pesoI / (this.alturaI * this.alturaI))
+        this.id = id,
+        this.pesoI = pesoI,
+        this.alturaI = alturaI,
+        this.fechaI = fechaI
+        this.imc = (this.pesoI / (this.alturaI * this.alturaI))
     }
 }
 
 //Functions
+//NOTIFICACIONES
+//Sweet alert de success
+function SWalert(){Swal.fire({
+    title: `Tus datos se han agregado exitosamente.`,
+    icon: `success`,
+    confirmButtonText: `Cerrar`,
+    timer: 2800,
+})}
+//Toastify de cargado
+function noti(){
+    Toastify(
+        {
+        text: `Datos cargados.`,
+        duration: 2000,
+        gravity: "top",
+        position: "right",
+            style: {
+                color: "white",
+                background: "green"
+            }
+        }
+    ).showToast()
+}
 //Agregando y capturando los valores de los inputs de form
 function agregarDato(registro){
     let pesoI = document.getElementById("pesoI")
@@ -38,13 +63,6 @@ function agregarDato(registro){
     alturaI.value = ""
     fechaI.value = ""    
 }
-//Sweet alert de success
-function SWalert(){Swal.fire({
-    title: `Tus datos se han agregado exitosamente.`,
-    icon: `success`,
-    confirmButtonText: `Cerrar`,
-    timer: 2800,
-})}
 
 //Boton con la funcion para ver registro
 function mostrarRegistro(array){
@@ -103,6 +121,10 @@ function mostrarRegistro(array){
             agregarDato(dato)
             registro.push(agregarDato)
             localStorage.getItem("registro")
+            setTimeout(()=>{
+                noti()
+                mostrarRegistro(registro)
+            }, 3000)        
         })
     }    
     //Manera para poder eliminar un dato
@@ -127,7 +149,7 @@ function mostrarRegistro(array){
                 position: "right",
                 style: {
                     color: "white",
-                    background: "green"
+                    background: "red"
                 }
             }
             ).showToast()          
@@ -151,8 +173,11 @@ function ordenarMayorMenor(array){
 
 //SET TIMEOUT para poder cargar el registro cada que se entra al sitio
 setTimeout(()=>{
+    h6Re.remove()
+    spinnerRe.remove()
+    noti()
     mostrarRegistro(registro)
-},2000)
+},2500)
 
 
 //EVENTOS:
@@ -162,7 +187,10 @@ agregarDatoBtn.addEventListener("click", (event) => {
     SWalert()
     setInterval(()=>{
         mostrarRegistro(registro)
-    }, 2000)
+    }, 2500)
+    setTimeout(() => {
+        noti()
+    },1500)
 })
 
 selectOrden.addEventListener("change", () => {

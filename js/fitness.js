@@ -27,7 +27,7 @@ const menuComidas = async () => {
     }
     localStorage.setItem("comidas", JSON.stringify(comidas))
 }
-
+//Funcion en donde imprimimos el array al dom
 function verComidas(array){
     comida.innerHTML = ""
     // Empezamos para poder mostrar cards con las comidas
@@ -37,9 +37,9 @@ function verComidas(array){
         dataDiv.innerHTML = 
         `
         <div id= "id${data.id}" class="card m-3 ">
-            <div class="card-body">
-                <h4 class="card-title" style = "text-align: center"> ${data.id}. ${data.nombre} </h4>
-                <p class = "mt-0" >Categoria: ${data.categoria}g</p>
+            <div class="card-body m-2">
+                <h4 class="card-title titleCmd" style = "text-align: center"> ${data.id}. ${data.nombre} </h4>
+                <p class = "mt-0" >Categoria: ${data.categoria}</p>
                 <p class = "mt-0" >Calorias: ${data.calorias}kcal</p>
                 <p class = "mt-0" >Proteina: ${data.proteinas}g</p>
                 <p class = "mt-0" >Grasas: ${data.grasas}g</p>
@@ -54,8 +54,25 @@ function verComidas(array){
 //Metemos las comidas al local storage
 localStorage.getItem("comidas") ? (registro = JSON.parse(localStorage.getItem('comidas'))) : (menuComidas())
 
+//Funcion para avisarle al usuario que ya se cargaron sus datos
+function noti(){
+    Toastify(
+        {
+        text: `Menú cargado.`,
+        duration: 2000,
+        gravity: "top",
+        position: "right",
+            style: {
+                color: "white",
+                background: "green"
+            }
+        }
+    ).showToast()
+}
+
 setTimeout(() => {
     spinnerCmd.remove()
     h6Cmd.remove()
+    noti()
     verComidas(comidas)
 }, 2500)
