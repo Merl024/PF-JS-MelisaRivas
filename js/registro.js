@@ -35,16 +35,16 @@ function SWalert(){Swal.fire({
 })}
 //Toastify de cargado
 function noti(){
-    Toastify(
-        {
+    Toastify({
         text: `Datos cargados.`,
         duration: 2000,
         gravity: "top",
         position: "right",
-            style: {
-                color: "white",
-                background: "green"
-            }
+        style: {
+            color: "black",
+            background: "linear-gradient(to bottom, rgb(199, 149, 156), rgb(255, 191, 199))"
+        },
+        onClick: function(){} // Callback after click
         }
     ).showToast()
 }
@@ -137,11 +137,11 @@ function mostrarRegistro(array){
             let datoEliminar = array.find((registro) => registro.id == dato.id)
             let posicion = array.indexOf(datoEliminar)
             array.splice(posicion,1)
-            if (dato.imc == null) {
+            if (dato.imc !== null) {
                 localStorage.setItem("registro", JSON.stringify(array));
                 setTimeout(()=> {
                     mostrarRegistro(registro)
-                })
+                }, 2000)
             }
             //alerta de que se elimino
             Toastify(
@@ -188,11 +188,8 @@ agregarDatoBtn.addEventListener("click", (event) => {
     event.preventDefault()
     agregarDato(registro) 
     SWalert()
-    setInterval(()=>{
-        mostrarRegistro(registro)
-    }, 2500)
     setTimeout(() => {
-        noti()
+        mostrarRegistro(registro)
     },1500)
 })
 

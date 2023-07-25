@@ -62,8 +62,8 @@ function noti(){
         gravity: "top",
         position: "right",
             style: {
-                color: "white",
-                background: "green"
+                color: "black",
+                background: "linear-gradient(to bottom, rgb(199, 149, 156), rgb(255, 191, 199))"
             }
         }
     ).showToast()
