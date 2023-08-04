@@ -99,7 +99,7 @@ function mostrarRegistro(array){
         `<div id="dato${dato.id}" class="card m-3 ">
             <div class="card-body">
                 <h4 class="card-title" style = "text-align: center">Este dato fue ingresado el ${dato.fechaI}.</h4>
-                <p>Pesoregistrado: ${dato.pesoI}kg</p>
+                <p>Peso registrado: ${dato.pesoI}kg</p>
                 <p>Altura registrado: ${dato.alturaI}m</p>
                 <p class="${dato.imc} malPeso">Tu IMC es: ${dato.imc.toFixed(2)}. Eso va por arriba del peso normal </p>
                 <button id="btnEliminar${dato.id}" class="btn btn-el">Eliminar</button>
